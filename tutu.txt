@@ -2,7 +2,7 @@ hoplala
 holélé
 
 int main(void){
-	char name = "Jonassss";
+	char name = "Jonassssxxxxx";
 
 	return 0;
 }
