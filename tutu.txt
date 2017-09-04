@@ -1,0 +1,8 @@
+hoplala
+holélé
+
+int main(void){
+	char name = "Jonassssxxxxx";
+
+	return 0;
+}
