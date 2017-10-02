@@ -1,0 +1,19 @@
+ici une insertion de texte dans le fichier
+
+
+
+
+on fait des trucs
+
+
+encore une modif
+
+
+if(myVariable == null){
+	doSomething();
+	}else{
+	doAutreChode();
+	}
+
+
+
