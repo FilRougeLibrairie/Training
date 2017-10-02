@@ -4,6 +4,7 @@ Il était sur le dos, un dos aussi dur qu’une carapace, et, en relevant un peu
 
 « Qu’est-ce qui m’est arrivé ? » pensa-t-il. Ce n’était pas un rêve. Sa chambre, une vraie chambre humaine, juste un peu trop petite, était là tranquille entre les quatre murs qu’il connaissait bien. Au-dessus de la table où était déballée une collection d’échantillons de tissus - Samsa était représentant de commerce - on voyait accrochée l’image qu’il avait récemment découpée dans un magazine et mise dans un joli cadre doré. 
 
+-> Ici le texte de branch1
 Le grand Oxymore voulut l'en dissuader, le prevenant que là-bas cela fourmillait de vils Virgulos, de sauvages Pointdexclamators et de sournois Semicolons qui l'attendraient pour sûr au prochain paragraphe
 
 
@@ -12,3 +13,10 @@ tout à fait, ne tenait plus q
 tout à fait, ne tenait plus q
 
 kghsegiuhergurs
+
+==> Séparateur
+
+Elles représentait une dame munie d’une toque et d’un boa tous les deux en fourrure et qui, assise bien droite, tendait vers le spectateur un lourd manchon de fourrures où tout son avant-bras avait disparu. Le regard de Gregor se tourna ensuite vers ès Noël où un zéphyr haï me vêt de glaçons würmiens, je dîne d’exquis rôtis de bœuf au kir à l’aÿ d’âge mûr & cætera ! Fougueux, j'enivre la squaw au pack de beau zythum. Ketch, yawl, jonque flambant neuve… jugez des prix ! Voyez le brick géant que
+
+et trois pizzas à récupérer depuis branch1 par cherry-pick
+-> Ici texte 49115b0... ajout texte à récupérer par cherry-pick
