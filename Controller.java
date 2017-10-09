@@ -45,10 +45,42 @@ public class ControllerMain extends HttpServlet {
             page = "/WEB-INF/includes/menu-main.jsp";
         }
 
+		// Ajout G
         if ("catalog".equals(section)) {
             page = "/WEB-INF/catalog.jsp";
+			if (!InputsControls.isCreditCardOk(tfPayCardNumber.getText())) {
+                jOptionPane.showMessageDialog(null, "Le numéro de carte bancaire est erroné (entre 15 et 19 chiffres)", "Information", JOptionPane.WARNING_MESSAGE);
+            } else if (!InputsControls.isCreditCardSecurityNumberOk(tfPaySecurityNumber.getText())) {
+                jOptionPane.showMessageDialog(null, "Le numéro de sécurité est erroné", "Information", JOptionPane.WARNING_MESSAGE);
+            } else if (creditCardExpirationDate == null || creditCardExpirationDate.before(today)) {
+                jOptionPane.showMessageDialog(null, "La carte bancaire est expirée", "Information", JOptionPane.WARNING_MESSAGE);
+
+            } else {
+
+                int bankValidation = jOptionPane.showConfirmDialog(null, "Bonjour la Banque, validez-vous la transaction ? ", "Validation Banque",
+                        jOptionPane.YES_NO_OPTION, jOptionPane.INFORMATION_MESSAGE);
+                if (bankValidation == JOptionPane.NO_OPTION || bankValidation == JOptionPane.CANCEL_OPTION || bankValidation == JOptionPane.CLOSED_OPTION) {
+                    jOptionPane.showMessageDialog(null, "La transaction n'a pas été acceptée\nLa commande n'est pas transmise", "Information", JOptionPane.WARNING_MESSAGE);
+                } else if (bankValidation == JOptionPane.YES_OPTION) {
+                    currentPurchaseStatusCode = ORDER_STATUS_PAYED;
+                    java.util.Date date = new Date();
+                    Object purchaseDate = new java.sql.Timestamp(date.getTime());
+                    currentPurchase.setShippingDate(purchaseDate.toString());
+
+                    Payment payment = new Payment();
+                    payment.setPayChoice(PAYEMENT_TYPE_CB);
+                    payment.setPayValidate(true);
+                    payment.setPurId(currentPurchase);
+                    payment.setPayDate(date.toString());
+                    payment.setPayCardType(comboPayCardType.getSelectedItem().toString());
+                    if (!tfPayOwner.getText().isEmpty()) {
+                        payment.setPayOwnerName(tfPayOwner.getText());
+                    }
+                    
 
         }
+		
+		
 
         /////// DO NOT MODIFY BELOW THIS LINE ///////
         System.out.println("--------->>> page : " + page); // DEBUG : recursive calling if displayed twice
