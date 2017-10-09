@@ -41,6 +41,29 @@ public class ControllerMain extends HttpServlet {
          *
          *
          */
+		 
+		  if ("menu-side".equals(section)) {
+            page = "/WEB-INF/includes/menu-main.jsp";
+			 for (int i = 0; i < 100; i++) {
+                try {
+                    Connection cnt = ds.getConnection();
+                    String requete ="select * from iso3166 s where s.A2 ='AD' ";
+                    Statement stmt = cnt.createStatement();
+                    ResultSet rs = stm.executeQuery(requete);
+                    if(rs.next()){
+                        String pays = rs.getString("Pays");
+                        out.println(i+") "+pays+"<br />");
+                    }
+                } catch (SQLException ex) {
+                    System.out.println("====> ERREUR 03 <=====" + ex.getMessage());
+                    ex.printStackTrace();
+                }
+        }
+		
+		////
+		 
+		 
+		 
         if ("menu-main".equals(section)) {
             page = "/WEB-INF/includes/menu-main.jsp";
 			 for (int i = 0; i < 100; i++) {
